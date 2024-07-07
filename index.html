@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemTab - Remedies for Common Sicknesses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>RemTab</h1>
+        <p>Remedies for Common Sicknesses</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="column sickness-column">
+                <h2>Sicknesses</h2>
+                <ul id="sickness-list">
+                    <li data-remedy="Drink plenty of fluids, rest, and take over-the-counter cold medications.">Common Cold</li>
+                    <li data-remedy="Rest in a quiet, dark room, apply a cold compress, and take pain relievers like ibuprofen or acetaminophen.">Headache</li>
+                    <li data-remedy="Drink clear fluids, avoid solid food for a few hours, and eat bland foods like crackers or toast.">Stomach Ache</li>
+                    <li data-remedy="Stay hydrated, rest, and take fever reducers like acetaminophen or ibuprofen.">Fever</li>
+                </ul>
+            </div>
+            <div class="column remedy-column">
+                <h2>Remedies</h2>
+                <div id="remedy-display"></div>
+            </div>
+        </div>
+        <button id="health-tips-btn">Health Tips</button>
+        <div id="health-tips"></div>
+        <div class="action-buttons">
+            <button onclick="window.location.href='share.html'" class="action-button">Share</button>
+            <button onclick="window.location.href='donate.html'" class="action-button">Donate</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
