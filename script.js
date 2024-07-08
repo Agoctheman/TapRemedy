@@ -29,17 +29,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     healthTipsBtn.addEventListener('click', function() {
-        const tips = [
-            "Eat a balanced diet rich in fruits and vegetables.",
-            "Exercise regularly to maintain good physical health.",
-            "Get enough sleep each night to recharge your body and mind.",
-            "Stay hydrated by drinking plenty of water throughout the day."
+        const healthTips = [
+    { tip: "Drink plenty of water to stay hydrated.", img: "images/water.jpg" },
+    { tip: "Eat a balanced diet rich in fruits and vegetables.", img: "images/diet2.jpg" },
+    { tip: "Exercise regularly to maintain a healthy body.", img: "images/exercise.jpg" },
+    { tip: "Get enough sleep to rejuvenate your body.", img: "images/sleep2.jpg" },
+    { tip: "Practice mindfulness and reduce stress.", img: "images/hygiene.jpg" }
         ];
 
         displayHealthTip(tips);
     });
 
-    function displayHealthTip(tips) {
+        function displayHealthTip() {
+    const randomIndex = Math.floor(Math.random() * healthTips.length);
+    const selectedTip = healthTips[randomIndex];
+
+    const healthTipElement = document.getElementById('healthTip');
+    const healthImageElement = document.getElementById('healthImage');
+
+    healthTipElement.textContent = selectedTip.tip;
+    healthImageElement.src = selectedTip.img;
+    healthImageElement.classList.remove('hidden');
         const randomIndex = Math.floor(Math.random() * tips.length);
         healthTipsDiv.innerHTML = `<p>${tips[randomIndex]}</p>`;
     }
