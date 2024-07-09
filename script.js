@@ -1,56 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const sicknessList = document.getElementById('sickness-list');
-    const remedyDisplay = document.getElementById('remedy-display');
-    const healthTipsBtn = document.getElementById('health-tips-btn');
-    const healthTipsDiv = document.getElementById('health-tips');
-    const actionButtons = document.querySelectorAll('.action-button');
+    function showRemedy(sickness) {
+        const remedies = {
+            cold: "Rest, drink plenty of fluids, and take over-the-counter cold medications.",
+            headache: "Take pain relievers, rest in a quiet and dark room, and apply a cold or warm compress.",
+            fever: "Stay hydrated, take fever-reducing medications, and rest.",
+            stomachache: "Drink clear fluids, avoid solid food for a few hours, and eat bland foods like crackers or toast.",
+            // Add more sicknesses and their remedies here
+        };
 
-    sicknessList.addEventListener('click', function(event) {
-        const selectedSickness = event.target;
-        const remedy = selectedSickness.getAttribute('data-remedy');
-        if (remedy) {
-            displayRemedy(selectedSickness, remedy);
-        }
-    });
-
-    function displayRemedy(selectedSickness, remedy) {
-        // Clear previous selections
-        const previousSelected = sicknessList.querySelector('.selected');
-        if (previousSelected) {
-            previousSelected.classList.remove('selected');
-        }
-
-        // Display selected sickness in bold
-        selectedSickness.classList.add('selected');
-
-        // Display remedy
-        remedyDisplay.innerHTML = `<p>${remedy}</p>`;
-        remedyDisplay.style.display = 'block';
+        document.getElementById('remedy-text').innerText = remedies[sickness] || "No remedy found.";
     }
 
-    healthTipsBtn.addEventListener('click', function() {
-        const healthTips = [
-    { tip: "Drink plenty of water to stay hydrated.", img: "images/water.jpg" },
-    { tip: "Eat a balanced diet rich in fruits and vegetables.", img: "images/diet2.jpg" },
-    { tip: "Exercise regularly to maintain a healthy body.", img: "images/exercise.jpg" },
-    { tip: "Get enough sleep to rejuvenate your body.", img: "images/sleep2.jpg" },
-    { tip: "Practice mindfulness and reduce stress.", img: "images/hygiene.jpg" }
+    function showHealthTip() {
+        const tips = [
+            { tip: "Drink plenty of water to stay hydrated.", image: "images/water.jpg" },
+            { tip: "Exercise regularly to maintain good health.", image: "images/exercise.jpg" }, 
+            { tip: "Eat a balanced diet rich in fruits and vegetables.", image: "images/diet2.jpg" },
+            { tip: "Get enough sleep to rejuvenate your body.", image: "images/sleep2.jpg" }, 
+            { tip: "Practice mindfulness and reduce stress.", image: "images/hygiene.jpg" }, 
+            { tip: "Avoid smoking and excessive alcohol consumption.", image: "images/nosmoke.png" }, 
+            // Add more health tips and images here
         ];
 
-        displayHealthTip(tips);
-    });
+        // Variable to keep track of the current tip index
+        let currentTipIndex = 0;
 
-        function displayHealthTip() {
-    const randomIndex = Math.floor(Math.random() * healthTips.length);
-    const selectedTip = healthTips[randomIndex];
+        // Function to display the next tip in the sequence
+        function displayNextTip() {
+          const currentTip = tips[currentTipIndex];
 
-    const healthTipElement = document.getElementById('healthTip');
-    const healthImageElement = document.getElementById('healthImage');
+          
+            document.getElementById('health-tip-container').innerHTML = `
+            <p>${currentTip.tip}</p>
+            <img src="${currentTip.image}" alt="Health Tip" style="max-width: 40%; height: 40%;">
+          `;
 
-    healthTipElement.textContent = selectedTip.tip;
-    healthImageElement.src = selectedTip.img;
-    healthImageElement.classList.remove('hidden');
-        const randomIndex = Math.floor(Math.random() * tips.length);
-        healthTipsDiv.innerHTML = `<p>${tips[randomIndex]}</p>`;
+          // Update the index to the next tip
+          currentTipIndex = (currentTipIndex + 1) % tips.length;
+        }
+
+        // Call the function to display the first tip
+        displayNextTip();
+
+        // Optionally, you can set an interval to automatically change the tip every few seconds
+        setInterval(displayNextTip, 10000); // Change the tip every 5 seconds
     }
-});
