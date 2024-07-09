@@ -1,41 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RemTab - Remedies for Common Sicknesses</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>RemTab</h1>
-        <p>Remedies for Common Sicknesses</p>
-    </header>
-    <main>
-        <div class="container">
-            <div class="column sickness-column">
-                <h2>Sicknesses</h2>
-                <ul id="sickness-list">
-                    <li data-remedy="Drink plenty of fluids, rest, and take over-the-counter cold medications.">Common Cold</li>
-                    <li data-remedy="Rest in a quiet, dark room, apply a cold compress, and take pain relievers like ibuprofen or acetaminophen.">Headache</li>
-                    <li data-remedy="Drink clear fluids, avoid solid food for a few hours, and eat bland foods like crackers or toast.">Stomach Ache</li>
-                    <li data-remedy="Stay hydrated, rest, and take fever reducers like acetaminophen or ibuprofen.">Fever</li>
-                </ul>
-            </div>
-            <div class="column remedy-column">
-                <h2>Remedies</h2>
-                <div id="remedy-display"></div>
-            </div>
-        </div>
-        <button id="health-tips-btn">Health Tips</button>
-        <div id="tipContainer" class="tip-container">
-            <p id="healthTip"></p>
-            <img id="healthImage" src="" alt="Health Image" class="hidden">
-        <div class="action-buttons">
-            <button onclick="window.location.href='share.html'" class="action-button">Share</button>
-            <button onclick="window.location.href='donate.html'" class="action-button">Donate</button>
-        </div>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>RemTab</title>
+          <link rel="stylesheet" href="style.css">
+      </head>
+      <body>
+          <header>
+              <h1>RemTab</h1>
+              <h2>Remedies for Common Sicknesses</h2>
+          </header>
+          <main>
+              <div class="container">
+                  <div class="column" id="sickness-column">
+                      <h3>Sickness</h3>
+                      <ul id="sickness-list">
+                          <li onclick="showRemedy('cold')">Common Cold</li>
+                          <li onclick="showRemedy('headache')">Headache</li>
+                          <li onclick="showRemedy('fever')">Fever</li>
+                          <li onclick="showRemedy('stomachache')">Stomachache</li>
+                          <!-- Add more sicknesses here -->
+                      </ul>
+                  </div>
+                  <div class="column" id="remedy-column">
+                      <h3>Remedies</h3>
+                      <p id="remedy-text">Click on a sickness to see the remedy.</p>
+                  </div>
+              </div>
+            <span style="font-weight: bold; color: blue;">Click Here ==></span>
+              <button id="health-tips" onclick="showHealthTip()">Health Tips</button>
+              <div id="health-tip-container"></div>
+              <button id="donate-button" onclick="location.href='donate.html'">Donate to Save a Life</button>
+          </main>
+          <script src="script.js"></script>
+      </body>
+      </html>
