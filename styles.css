@@ -1,90 +1,84 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Ensures the entire viewport height is covered */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    width: 100%;
-    margin-bottom: 2em;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
+h1 {
+  margin: 0;
+  font-size: 2.5em;
 }
 
-header p {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-main {
-    width: 100%;
-    max-width: 800px; /* Adjust as needed */
-    padding: 1em;
-    text-align: center;
+h2 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: normal;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 .column {
-    flex: 1;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Adjust text alignment */
+  width: 300px;
+  padding: 10px;
+  text-align: left;
 }
 
-.sickness-column {
-    background-color: #FFD700; /* Gold */
+#sickness-column {
+  background-color: gold;
 }
 
-.remedy-column {
-    background-color: #87CEFA; /* Light Sky Blue */
+#remedy-column {
+  background-color: skyblue;
+}
+
+h3 {
+  margin-top: 0;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-    cursor: pointer;
-    margin-bottom: 0.5em;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
 li:hover {
-    background-color: #f0f0f0;
-}
-
-#remedy-display {
-    display: none;
+  background-color: #ddd;
 }
 
 button {
-    margin-top: 2em;
-    padding: 0.5em 1em;
-    font-size: 1em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    text
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#health-tip-container {
+  margin: 20px 0;
+}
+
+#donate-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
